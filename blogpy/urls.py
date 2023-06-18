@@ -26,5 +26,7 @@ urlpatterns = [
     path('', include('blog.urls')),
 ]
 if settings.DEBUG:
+    #     if             url = x             go       directory = y
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static('contact/static', document_root=settings.STATIC_ROOT)
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

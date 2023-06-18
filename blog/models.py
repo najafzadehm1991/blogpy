@@ -29,7 +29,7 @@ class Article(models.Model):
     created_at = models.DateField(default=datetime.now(), blank=False)
     category = models.ForeignKey('category', on_delete=models.CASCADE)
     author = models.ForeignKey(UserProfile,on_delete=models.CASCADE)
-
+    promote = models.BooleanField(default=False)
 class Category(models.Model):
     title = models.CharField(max_length=128, null=False, blank=False)
     cover = models.FileField(upload_to='category_cover/', null=False, blank=False, validators=[validate_file_extention])
